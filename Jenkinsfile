@@ -6,12 +6,36 @@ pipeline {
         choice(name: 'action', choices: ['apply', 'destroy'], description: 'Select the action to perform')
     }
 
+    environment {
+        DOCKER_CREDENTIALS = credentials('dockerhub_id')  // Jenkins credential ID
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 git branch: 'develop', url: 'https://github.com/danielvh01/devops-python.git'
             }
         }
+        stage('Build Image') {
+            steps {
+                script {
+                    docker.build('danielvh01/python_django_api:latest', '.')
+                }
+            }
+        }
+        stage('Push Image') {
+            steps {
+                script {
+                    withDockerRegistry([credentialsId: 'dockerhub_id', url: 'https://index.docker.io/v1/']) {
+                        echo "✅ Successfully authenticated. Pushing the image..."
+                        docker.image('danielvh01/python_django_api:latest').push()
+                        echo "🚀 Image pushed successfully!"
+                    }
+                }
+            }
+        }
+
+
         stage('Terraform init') {
             steps {
                 powershell 'terraform init'
