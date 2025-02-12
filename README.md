@@ -1,139 +1,26 @@
-# Demo Devops Python
+Daniel Velasquez
 
-This is a simple application to be used in the technical test of DevOps.
+Flujo y diseño CI/CD despliegue de aplicativo Python a Kubernetes
 
-## Getting Started
+![Diseno](img/diseno.jpg)
 
-### Prerequisites
 
-- Python 3.11.3
 
-### Installation
+Explicación: 
+1.	developer realiza un push a un repositorio github.
+2.	Github dispara a través de un webhook, el pipeline a través de Jenkins.
+3.	Jenkins a través de “stages” arma la imagen en Docker, realiza push a dockerhub y ejecuta terraform para el despliegue del aplicativo al cluster de Kubernetes.
+4.	Terraform se encarga de la creación de servicios, namespaces, mapear el provider (KUbernetes cluster de Docker Desktop). Se realiza terraform init, plan y apply.
 
-Clone this repo.
+Pruebas de ejecución paso a paso:
 
-```bash
-git clone https://bitbucket.org/devsu/demo-devops-python.git
-```
+ 
+**Validar documento "Documentacion.pdf"
 
-Install dependencies.
 
-```bash
-pip install -r requirements.txt
-```
 
-Migrate database
+Repositorio publico de la solución:
 
-```bash
-py manage.py makemigrations
-py manage.py migrate
-```
+<https://github.com/danielvh01/devops-python.git>
 
-### Database
 
-The database is generated as a file in the main path when the project is first run, and its name is `db.sqlite3`.
-
-Consider giving access permissions to the file for proper functioning.
-
-## Usage
-
-To run tests you can use this command.
-
-```bash
-py manage.py test
-```
-
-To run locally the project you can use this command.
-
-```bash
-py manage.py runserver
-```
-
-Open http://localhost:8000/api/ with your browser to see the result.
-
-### Features
-
-These services can perform,
-
-#### Create User
-
-To create a user, the endpoint **/api/users/** must be consumed with the following parameters:
-
-```bash
-  Method: POST
-```
-
-```json
-{
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the response is unsuccessful, we will receive status 400 and the following message:
-
-```json
-{
-    "detail": "error"
-}
-```
-
-#### Get Users
-
-To get all users, the endpoint **/api/users** must be consumed with the following parameters:
-
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-[
-    {
-        "id": 1,
-        "dni": "dni",
-        "name": "name"
-    }
-]
-```
-
-#### Get User
-
-To get an user, the endpoint **/api/users/<id>** must be consumed with the following parameters:
-
-```bash
-  Method: GET
-```
-
-If the response is successful, the service will return an HTTP Status 200 and a message with the following structure:
-
-```json
-{
-    "id": 1,
-    "dni": "dni",
-    "name": "name"
-}
-```
-
-If the user id does not exist, we will receive status 404 and the following message:
-
-```json
-{
-    "detail": "Not found."
-}
-```
-
-## License
-
-Copyright © 2023 Devsu. All rights reserved.

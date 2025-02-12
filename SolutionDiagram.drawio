@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.11">
+  <diagram name="Page-1" id="9M0SilQoTQjDtyTF0GOZ">
+    <mxGraphModel dx="2261" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="W-HScG8YqqtfsMqHnre3-1" value="Windows" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="115" y="40" width="645" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-2" value="Kubernetes Cluster" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://pbs.twimg.com/profile_images/511909265720614913/21_d3cvM_400x400.png;" parent="W-HScG8YqqtfsMqHnre3-1" vertex="1">
+          <mxGeometry x="430" y="135" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="W-HScG8YqqtfsMqHnre3-1" source="W-HScG8YqqtfsMqHnre3-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="235" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-7" value="Jenkins " style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1483px-Jenkins_logo.svg.png;" parent="W-HScG8YqqtfsMqHnre3-1" vertex="1">
+          <mxGeometry x="65" y="123.04999999999998" width="68" height="93.9" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="W-HScG8YqqtfsMqHnre3-1" target="W-HScG8YqqtfsMqHnre3-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="315" y="170" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-18" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Docker.svg;" parent="W-HScG8YqqtfsMqHnre3-1" vertex="1">
+          <mxGeometry x="427.5" y="30" width="75" height="61.5" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.007;entryY=0.48;entryDx=0;entryDy=0;entryPerimeter=0;" parent="W-HScG8YqqtfsMqHnre3-1" target="W-HScG8YqqtfsMqHnre3-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="275" y="130" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="275" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-20" value="Terraform" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.aviator.co/blog/wp-content/uploads/2023/01/terraform.png;" parent="W-HScG8YqqtfsMqHnre3-1" vertex="1">
+          <mxGeometry x="210" y="119.3" width="134.23" height="100.7" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-3" value="Developer" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.user;" parent="1" vertex="1">
+          <mxGeometry x="-33.75" y="320" width="47.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="W-HScG8YqqtfsMqHnre3-4" target="W-HScG8YqqtfsMqHnre3-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-4" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.github_code;pointerEvents=1;" parent="1" vertex="1">
+          <mxGeometry x="-40" y="180" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-6" value="commit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="W-HScG8YqqtfsMqHnre3-3" target="W-HScG8YqqtfsMqHnre3-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-13" value="Github" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-40" y="150" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W-HScG8YqqtfsMqHnre3-14" value="webhook" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="30" y="180" width="70" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
