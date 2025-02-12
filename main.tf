@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  config_path = "C:/Users/PC/.kube/config"
 }
 
 resource "kubernetes_namespace" "python_api" {

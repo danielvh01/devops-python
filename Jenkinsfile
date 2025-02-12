@@ -6,22 +6,20 @@ pipeline {
         choice(name: 'action', choices: ['apply', 'destroy'], description: 'Select the action to perform')
     }
 
-
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/danielvh01/devops-python.git'
+                git branch: 'develop', url: 'https://github.com/danielvh01/devops-python.git'
             }
         }
         stage('Terraform init') {
             steps {
-                sh 'terraform init'
+                powershell 'terraform init'
             }
         }
         stage('Plan') {
             steps {
-                sh 'terraform plan -out tfplan'
-                sh 'terraform show -no-color tfplan > tfplan.txt'
+                powershell 'terraform plan -out tfplan'
             }
         }
         stage('Apply / Destroy') {
@@ -33,16 +31,14 @@ pipeline {
                             input message: "Do you want to apply the plan?",
                             parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
                         }
-
-                        sh 'terraform ${action} -input=false tfplan'
+                        powershell 'terraform apply --auto-approve'
                     } else if (params.action == 'destroy') {
-                        sh 'terraform ${action} --auto-approve'
+                        powershell 'terraform destroy --auto-approve'
                     } else {
                         error "Invalid action selected. Please choose either 'apply' or 'destroy'."
                     }
                 }
             }
         }
-
     }
 }
